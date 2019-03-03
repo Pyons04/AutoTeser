@@ -1,6 +1,6 @@
 #!/bin/bash
 #export PATH="/usr/local/rbenv/bin:$PATH"
-LINE="-------------------------------------------------"
+LINE="-------------------------------------------------------"
 
 if test -n "git status --porcelain"; then
 echo ${LINE}
@@ -35,6 +35,11 @@ echo ${LINE}
          echo ${LINE}
      done
 
- else
-     echo "Working tree is clean. Move on to your next task!\n"
- fi
+else
+     echo All changes has been commited. Move on to your next task.
+fi
+
+echo
+echo
+echo $(git status --porcelain| wc -l) uncommited files has been detected.
+echo Auto test has been finished.
